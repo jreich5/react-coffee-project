@@ -1,0 +1,5 @@
+CoffeePage (s: coffees / addCoffee / searchCoffees)
+  CoffeeList (p: coffees)
+  CoffeForms (p: addCoffee / searchCoffees)
+    SearchCoffeeForm (search) (s: input | p: coffees / searchCoffees / searchCoffees)
+    AddCoffeeForm (submit) (s: input | p: coffees / addCoffee / searchCoffees)
