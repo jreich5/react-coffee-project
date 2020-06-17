@@ -31,7 +31,7 @@ function sortCoffees(a, b) {
 
 function App() {
   
-  const [coffees, setCoffees] = useState(coffeesData);
+  const [coffees, setCoffees] = useState(coffeesData.sort(sortCoffees));
   const [ displayedCoffees, setDisplayedCoffees ] = useState(coffees);
   
   function addCoffee(coffee) {
@@ -40,11 +40,15 @@ function App() {
     setDisplayedCoffees([...coffees, coffee].sort(sortCoffees));
   }
 
-  function searchCoffees(search) {
-    if (search === '') {
-      setDisplayedCoffees(coffees.sort(sortCoffees));
+  function searchCoffees(roastValue, searchValue) {
+    let coffeesToDisplay = [...coffees];
+    if (roastValue !== 'all') {
+      coffeesToDisplay = coffeesToDisplay.filter(coffee => coffee.roast === roastValue);
+    }
+    if (searchValue === '') {
+      setDisplayedCoffees(coffeesToDisplay.sort(sortCoffees));
     } else {
-      setDisplayedCoffees(coffees.filter(coffee => coffee.name.toLowerCase().startsWith(search.toLowerCase())).sort(sortCoffees));
+      setDisplayedCoffees(coffeesToDisplay.filter(coffee => coffee.name.toLowerCase().startsWith(searchValue.toLowerCase())).sort(sortCoffees));
     }
   }
   

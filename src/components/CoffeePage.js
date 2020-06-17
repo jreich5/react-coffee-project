@@ -10,8 +10,8 @@ CoffeePage.propTypes = {
 function CoffeePage({ coffees, addCoffee, searchCoffees }) {
 
   return (
-    <main className='container text-center mt-5'>
-      <h1>Coffee!</h1>
+    <main className='container mt-5'>
+      <h1 className="text-center">Coffee!</h1>
       <hr/>
       <div className='row'>
         <CoffeeList coffees={coffees} />

@@ -16,15 +16,19 @@ function AddCoffeeForm({ addCoffee }) {
   
   return (
     <div>
-      <h3>Add Coffee Form</h3>
+      <h3>Add Coffee</h3>
       <form>
-        <input id="name" type="text" placeholder="Add coffee name" onChange={e => setName(e.target.value)}/>
-        <select id="roast" onChange={e => setRoast(e.target.value)}>
+        <div className="form-group">
+          <label htmlFor="add-coffee-name-inpt">Coffee Name</label>
+          <input id="add-coffee-name-inpt" type="text" className="form-control" placeholder="Enter new coffee name" onChange={e => setName(e.target.value)}/>
+        </div>
+        <label htmlFor="add-coffee-roast-inpt">Coffee Roast</label>
+        <select className="form-control" id="add-coffee-roast-inpt" onChange={e => setRoast(e.target.value)}>
           <option value="light">Light</option>
           <option value="medium">Medium</option>
           <option value="dark">Dark</option>
         </select>
-        <button onClick={submitCoffee}>Add Coffee</button>
+        <button className="btn btn-primary btn-block mt-3" onClick={submitCoffee}>Add Coffee</button>
       </form>
     </div>
   );

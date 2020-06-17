@@ -9,8 +9,10 @@ CoffeeList.propTypes = {
 function CoffeeList({ coffees }) {
 
   return (
-      <section className='col-6 row' >
-        {coffees.map(coffee => <Coffee coffee={coffee} key={coffee.id} />)}
+      <section className="col-7">
+        <div className="row">
+          {coffees.map(coffee => <Coffee coffee={coffee} key={coffee.id} />)}
+        </div>
       </section>
     );
 }

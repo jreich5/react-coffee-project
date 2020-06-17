@@ -9,8 +9,9 @@ CoffeeForms.propTypes = {
 
 function CoffeeForms({ searchCoffees, addCoffee }) {
   return (
-    <div>
+    <div className="text-left col-5">
       <SearchCoffeesForm searchCoffees={searchCoffees} />
+      <hr/>
       <AddCoffeeForm addCoffee={addCoffee} />
     </div>
   )
